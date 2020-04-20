@@ -13,11 +13,11 @@ url_git = 'https://techmaster.vn/user/learn/bmtq63n0k7qs4ve312j0/0fu/bmjl5gn0k7q
 path_video = '/home/png-dev/Downloads/git/videos'
 path_doc = '/home/png-dev/Downloads/git/docs'
 
-cookies = dict(mycookiesessionnameid='07c644c3-b24f-4720-ae1e-bf6fa91c5e10',
-               _fbp='fb.1.1586354588743.1600991288',
-               _ga='GA1.2.1152320599.1586354588',
-               _gid='GA1.2.2064829556.1587221660',
-               TECHMASTER_CART='1799')
+cookies = dict(mycookiesessionnameid=os.environ.get('mycookiesessionnameid'),
+               _fbp=os.environ.get('_fbp'),
+               _ga=os.environ.get('_ga'),
+               _gid=os.environ.get('_gid'),
+               TECHMASTER_CART=os.environ.get('TECHMASTER_CART'))
 
 res = requests.get(url=url_git, cookies=cookies)
 data = json.loads(res.content)
